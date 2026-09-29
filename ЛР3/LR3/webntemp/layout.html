@@ -1,0 +1,30 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+		<meta charset="utf-8">
+		<title>Учет трат</title>
+		<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+		<header>
+			<h1>Мои траты</h1>
+			<nav>
+				<a href="/">Главная</a>
+			</nav>
+			<hr>
+		</header>
+
+		<main>
+
+				{{ template "content" . }}
+		</main>
+
+		<footer>
+
+		<p><small>Проект на СЯП</small></p>
+
+	</footer>
+</body>
+</html>
+{{ end }}
