@@ -1,0 +1,9 @@
+{{ define "content" }}
+<h2>Вход</h2>
+<form method="POST" action="/login">
+	<p><label>Email: <input type="email" name="email" value="{{ .Email }}" required></label></p>
+	<p><label>Пароль: <input type="password" name="password" required></label></p>
+	<p><button type="submit">Войти</button></p>
+</form>
+<p>Нет аккаунта? <a href="/register">Зарегистрироваться</a></p>
+{{ end }}

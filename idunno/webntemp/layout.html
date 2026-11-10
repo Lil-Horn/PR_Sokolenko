@@ -1,0 +1,40 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+		<meta charset="utf-8">
+		<title>Учет трат</title>
+		<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+		<header>
+			<h1>Мои траты</h1>
+			<nav>
+				{{ if .Authed }}
+				<a href="/">Главная</a>
+				<form method="POST" action="/logout" class="inline">
+					<button type="submit" class="linklike">Выйти</button>
+				</form>
+				{{ else }}
+				<a href="/login">Вход</a>
+				<a href="/register">Регистрация</a>
+				{{ end }}
+			</nav>
+			<hr>
+		</header>
+
+		<main>
+
+				{{ if .Error }}<p class="error">{{ .Error }}</p>{{ end }}
+				{{ if .Info }}<p class="info">{{ .Info }}</p>{{ end }}
+				{{ template "content" . }}
+		</main>
+
+		<footer>
+
+		<p><small>Проект на СЯП</small></p>
+
+	</footer>
+</body>
+</html>
+{{ end }}
